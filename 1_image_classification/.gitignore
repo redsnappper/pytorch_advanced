@@ -3,3 +3,4 @@ data/imagenet_class_index.json
 .ipynb_checkpoints
 *.pyc
 *.pth
+check.py
