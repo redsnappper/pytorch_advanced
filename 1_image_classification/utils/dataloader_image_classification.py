@@ -64,7 +64,9 @@ def make_datapath_list(phase="train"):
         データへのパスを格納したリスト
     """
 
-    rootpath = "./data/hymenoptera_data/"
+
+    rootpath = "./pytorch_advanced/1_image_classification/data/hymenoptera_data/"
+
     target_path = osp.join(rootpath+phase+'/**/*.jpg')
     print(target_path)
 
