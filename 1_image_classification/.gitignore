@@ -4,3 +4,4 @@ data/imagenet_class_index.json
 *.pyc
 *.pth
 check.py
+check_fineLearning.py

@@ -117,9 +117,11 @@ class HymenopteraDataset(data.Dataset):
 
         # 画像のラベルをファイル名から抜き出す
         if self.phase == "train":
-            label = img_path[30:34]
+            wordPosition = int(img_path.find("train"))+6
+            label = img_path[wordPosition:wordPosition+4]
         elif self.phase == "val":
-            label = img_path[28:32]
+            wordPosition = int(img_path.find("val"))+4
+            label = img_path[wordPosition:wordPosition+4]
 
         # ラベルを数値に変更する
         if label == "ants":

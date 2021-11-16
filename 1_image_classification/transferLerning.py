@@ -189,3 +189,6 @@ def train_model(net, dataloaders_dict, criterion, optimizer, num_epochs):
                 phase, epoch_loss, epoch_acc))
 num_epochs=3
 train_model(net, dataloaders_dict, criterion, optimizer, num_epochs=num_epochs)
+
+save_path = 'pytorch_advanced/1_image_classification/save_path/'
+torch.save(net.state_dict(), save_path)
