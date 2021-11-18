@@ -4,8 +4,7 @@ import matplotlib.pyplot as plt
 import torch.utils.data as data
 from torch.utils.data import dataloader
 from utils.data_augumentation import Compose, Scale, RandomRotation, RandomMirror, Resize, Normalize_Tensor
-import numpy as np
-import pprint as p
+
 def make_datapath_list(rootpath):
 
     imgpath_template = osp.join(rootpath, 'JPEGImages', '%s.jpg')
