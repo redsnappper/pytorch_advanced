@@ -19,7 +19,9 @@ torch.manual_seed(rndnum)
 np.random.seed(rndnum)
 random.seed(rndnum)
 
-
+epoch_loss_plt = []
+epoch_acc_plt = []
+epoch_plt_count = []
 
 size = 224
 mean = (0.485, 0.456, 0.406)
@@ -187,8 +189,22 @@ def train_model(net, dataloaders_dict, criterion, optimizer, num_epochs):
 
             print('{} Loss: {:.4f} Acc: {:.4f}'.format(
                 phase, epoch_loss, epoch_acc))
+
+            epoch_loss_plt.append(epoch_loss)
+            epoch_acc_plt.append(epoch_acc)
+            epoch_plt_count.append(epoch)
+
 num_epochs=3
 train_model(net, dataloaders_dict, criterion, optimizer, num_epochs=num_epochs)
 
-save_path = 'pytorch_advanced/1_image_classification/save_path/'
-torch.save(net.state_dict(), save_path)
+# save_path = 'pytorch_advanced/1_image_classification/save_path/'
+# torch.save(net.state_dict(), save_path)
+
+plt.plot(epoch_plt_count, epoch_loss_plt, label='epoch loss')
+plt.plot(epoch_plt_count, epoch_acc_plt, label = 'epoch accuracy')
+
+plt.title('Transfer Learning')
+plt.xlabel('# of Epoch')
+plt.ylabel('Epoch_Accuracy')
+
+plt.show()

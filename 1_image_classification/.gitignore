@@ -5,3 +5,4 @@ data/imagenet_class_index.json
 *.pth
 check.py
 check_fineLearning.py
+colab_learning.ipynb
